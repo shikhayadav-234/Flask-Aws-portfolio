@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block content %}
+<section class="hero card">
+  <h1>🚀 Hello, I'm {{ name }}</h1>
+  <p class="lead">
+    This is my Flask portfolio app deployed on <b>AWS EC2 Free Tier</b>.
+  </p>
+  <div class="cta-row">
+    <a href="{{ url_for('predict') }}" class="btn">Try Age Prediction</a>
+    <a href="{{ url_for('about') }}" class="btn btn-outline">About Project</a>
+  </div>
+</section>
+
+<section class="grid">
+  <div class="grid-card">
+    <h3>Flask Backend</h3>
+    <p>Lightweight Python web framework with Jinja2 templating.</p>
+  </div>
+  <div class="grid-card">
+    <h3>Clean UI</h3>
+    <p>Modern CSS with gradients, glassmorphism, and responsive layout.</p>
+  </div>
+  <div class="grid-card">
+    <h3>AWS Hosting</h3>
+    <p>Free Tier EC2 instance using Nginx + Gunicorn (production ready).</p>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% block content %}
+<section class="card">
+  <h2>About This Project</h2>
+  <p>
+    This is a resume-ready Flask app that I deploy on AWS EC2 Free Tier. It
+    uses:
+  </p>
+  <ul class="list">
+    <li>Flask + Jinja templates</li>
+    <li>Gunicorn app server</li>
+    <li>Nginx reverse proxy</li>
+    <li>Clean, responsive CSS</li>
+  </ul>
+  <p>
+    It includes a small Age Prediction demo to showcase a simple input → output
+    flow.
+  </p>
+</section>
+{% endblock %}

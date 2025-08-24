@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title if title else 'Flaskfolio 🚀' }}</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav">
+        <!-- Logo / Brand -->
+        <a class="brand" href="/">
+          <span class="logo">🚀 Flaskfolio</span>
+        </a>
+
+        <ul class="menu">
+          <li>
+            <a
+              href="{{ url_for('home') }}"
+              class="{% if request.endpoint == 'home' %}active{% endif %}"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="{{ url_for('predict') }}"
+              class="{% if request.endpoint == 'predict' %}active{% endif %}"
+            >
+              Age Demo
+            </a>
+          </li>
+          <li>
+            <a
+              href="{{ url_for('about') }}"
+              class="{% if request.endpoint == 'about' %}active{% endif %}"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="{{ url_for('contact') }}"
+              class="{% if request.endpoint == 'contact' %}active{% endif %}"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="content">{% block content %}{% endblock %}</main>
+
+    <footer class="site-footer">
+      <p>© {{ 2025 }} Shikha • Hosted on AWS EC2 Free Tier</p>
+    </footer>
+  </body>
+</html>
